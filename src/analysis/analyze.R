@@ -1,11 +1,17 @@
-# load 
-load("./gen/analysis/input/data_cleaned.RData")
+#code for measuring distance 
 
-# Estimate model 1 
-m1 <- lm(V1 ~ V3 + V4,df_cleaned)
-
-# Estimate model 2 
-m2 <- lm(V1 ~ V3 + V4 + V5 , df_cleaned)
-
-# Save results
-save(m1,m2,file="./gen/analysis/output/model_results.RData")
+earth.dist <- function (long1, lat1, long2, lat2)
+{
+  rad <- pi/180
+  a1 <- lat1 * rad
+  a2 <- long1 * rad
+  b1 <- lat2 * rad
+  b2 <- long2 * rad
+  dlon <- b2 - a2
+  dlat <- b1 - a1
+  a <- (sin(dlat/2))^2 + cos(a1) * cos(b1) * (sin(dlon/2))^2
+  c <- 2 * atan2(sqrt(a), sqrt(1 - a))
+  R <- 6378.145
+  d <- R * c
+  return(d)
+}
