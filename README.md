@@ -5,3 +5,4 @@ In our research we study the price changes of Airbnb's in different cities in th
 
 Since the tour of Coldplay started in March 2022 and will continue till July 2023, we are not able to study all cities. However, results of our study can help other cities by predicting prices of Airbnb's. The cities we will study are Mexico City, Dallas, and Chicago. 
 
+We will use data about the listings from Airbnb retrieved by "http://insideairbnb.com/get-the-data", and to find the concert dates we will use data from "http://songkick.com"
