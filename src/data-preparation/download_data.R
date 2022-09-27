@@ -1,8 +1,24 @@
-# Download dataset 1
-# dir.create('./data/dataset1')  # Uncomment if need to create directory with R
-download.file('https://rgreminger.github.io/files/dataset1.csv','./data/dataset1/dataset1.csv')
+library(readr)
 
-# Download dataset 2
-# dir.create('./data/dataset2')  # Uncomment if need to create directory with R
-download.file('https://rgreminger.github.io/files/dataset2.csv','./data/dataset2/dataset2.csv')
+#create data repository 
+#dir.create('./data')  
+
+
+#download and load data 
+download.file(url = 'http://data.insideairbnb.com/united-states/tx/dallas/2022-09-14/visualisations/listings.csv',
+                                     destfile = './data/Dallas.csv')
+Dallas_listings <- read_csv('data/Dallas.csv')
+
+download.file(url = 'http://data.insideairbnb.com/united-states/il/chicago/2022-09-14/visualisations/listings.csv',,
+                                      destfile = './data/Chicago.csv')
+Chicago_listings <- read_csv('data/Chicago.csv')
+
+download.file(url = 'http://data.insideairbnb.com/mexico/df/mexico-city/2022-06-21/visualisations/listings.csv',
+                                           destfile = './data/Mexico.csv')
+Mexico_listings <- read_csv('data/Mexico.csv')
+
+
+
+
+
 
